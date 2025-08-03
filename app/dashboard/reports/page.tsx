@@ -62,7 +62,7 @@ export default function ReportsPage() {
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
           <h1 className="text-3xl font-bold tracking-tight">Monthly Profit Reports</h1>
-          <p className="text-muted-foreground">Track your factory's financial performance and profitability</p>
+          <p className="text-muted-foreground">Track your factory&apos;s financial performance and profitability</p>
         </div>
         <div className="flex items-center space-x-2">
           <Select value={reportType} onValueChange={setReportType}>
@@ -98,7 +98,7 @@ export default function ReportsPage() {
                 mode="range"
                 defaultMonth={dateRange?.from}
                 selected={dateRange}
-                onSelect={setDateRange}
+                onSelect={range => setDateRange({ from: range?.from, to: range?.to ?? undefined })}
                 numberOfMonths={2}
               />
             </PopoverContent>
